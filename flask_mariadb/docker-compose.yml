@@ -1,0 +1,25 @@
+version: "2.2"
+
+services:
+  application:
+    build: application
+    links:
+      - database
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_DEBUG: "1"
+      MYSQL_USER: "application"
+      MYSQL_PASSWORD: "password"
+      MYSQL_DATABASE: "application_db"
+    volumes:
+      - ./application/src:/opt/application
+
+  database:
+    image: mariadb:10.4
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: "application_db"
+      MYSQL_USER: "application"
+      MYSQL_PASSWORD: "password"
+
