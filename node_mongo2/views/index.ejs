@@ -5,17 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>My Node App</title>
+  <title>Node App</title>
 </head>
 
 <body>
-  <h1>My Node App</h1>
+  <h1>Node App</h1>
   <form method="post" action="/item/add">
-    <label for="name">Name</label>
+    <label for="name">Nome</label>
     <input type="text" name="name">
-    <input type="submit" value="Add">
+    <input type="submit" value="Adicionar">
   </form>
-  <h4>Items:</h4>
+  <h4>Itens:</h4>
   <ul>
     <% items.forEach(function(item) { %>
       <li>
