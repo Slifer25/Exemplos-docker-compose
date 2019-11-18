@@ -17,9 +17,9 @@ app = Flask(__name__)
 def hello():
     return f'Application /'
 
-@app.route('/quadrado/<int:x>')
+@app.route('/quadrado/<string:x>')
 def quadrado(x):
-   r = x**2
+   r = int(x)**2
    return jsonify (r)
 
 
