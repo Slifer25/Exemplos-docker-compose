@@ -7,19 +7,13 @@ services:
       - database
     ports:
       - "5000:5000"
-    environment:
-      FLASK_DEBUG: "1"
-      MYSQL_USER: "application"
-      MYSQL_PASSWORD: "password"
-      MYSQL_DATABASE: "application_db"
+    env_file:
+      - ./env/app.env
     volumes:
       - ./application/src:/opt/application
 
   database:
     image: mariadb:10.4
-    environment:
-      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
-      MYSQL_DATABASE: "application_db"
-      MYSQL_USER: "application"
-      MYSQL_PASSWORD: "password"
+    env_file:
+      - ./env/mdb.env
 
